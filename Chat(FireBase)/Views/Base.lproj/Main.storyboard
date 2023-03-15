@@ -238,29 +238,88 @@
             </objects>
             <point key="canvasLocation" x="858" y="-329"/>
         </scene>
-        <!--Chat View Controller-->
+        <!--Title-->
         <scene sceneID="BYn-b9-PPS">
             <objects>
                 <viewController id="4lv-28-MYz" customClass="ChatViewController" customModule="Chat_FireBase_" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="sGN-Od-QXm">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="YXb-r8-Pfd">
+                                <rect key="frame" x="0.0" y="59" width="393" height="699"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="pNQ-jF-cDX">
+                                        <rect key="frame" x="0.0" y="50" width="393" height="43.666667938232422"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="pNQ-jF-cDX" id="zZ2-kW-xqV">
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nzH-ye-7lL">
+                                <rect key="frame" x="0.0" y="758" width="393" height="60"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oIF-37-OgD">
+                                        <rect key="frame" x="333" y="20" width="40" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="40" id="Zd2-2V-zPV"/>
+                                            <constraint firstAttribute="height" constant="40" id="prR-bP-39L"/>
+                                        </constraints>
+                                        <color key="tintColor" name="BrandLightBlue"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="paperplane.fill" catalog="system"/>
+                                    </button>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="loo-we-GlG">
+                                        <rect key="frame" x="20" y="20" width="293" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                                <color key="backgroundColor" name="BrandPurple"/>
+                                <constraints>
+                                    <constraint firstItem="oIF-37-OgD" firstAttribute="top" secondItem="nzH-ye-7lL" secondAttribute="top" constant="20" id="00Z-Fg-hF9"/>
+                                    <constraint firstAttribute="height" constant="60" id="8bQ-bz-NjE"/>
+                                    <constraint firstAttribute="trailing" secondItem="oIF-37-OgD" secondAttribute="trailing" constant="20" id="9dk-Nv-SGL"/>
+                                    <constraint firstItem="loo-we-GlG" firstAttribute="leading" secondItem="nzH-ye-7lL" secondAttribute="leading" constant="20" id="Tkl-e6-OGz"/>
+                                    <constraint firstItem="loo-we-GlG" firstAttribute="top" secondItem="nzH-ye-7lL" secondAttribute="top" constant="20" id="l6E-xq-7WH"/>
+                                    <constraint firstItem="oIF-37-OgD" firstAttribute="leading" secondItem="loo-we-GlG" secondAttribute="trailing" constant="20" id="pAj-tM-o4P"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="jL5-OY-h1o"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="YXb-r8-Pfd" firstAttribute="top" secondItem="jL5-OY-h1o" secondAttribute="top" id="NYA-Om-e9l"/>
+                            <constraint firstItem="YXb-r8-Pfd" firstAttribute="leading" secondItem="jL5-OY-h1o" secondAttribute="leading" id="Q1F-9c-34b"/>
+                            <constraint firstItem="YXb-r8-Pfd" firstAttribute="trailing" secondItem="jL5-OY-h1o" secondAttribute="trailing" id="W2G-2b-rIh"/>
+                            <constraint firstItem="nzH-ye-7lL" firstAttribute="trailing" secondItem="jL5-OY-h1o" secondAttribute="trailing" id="Z39-SA-LmH"/>
+                            <constraint firstItem="nzH-ye-7lL" firstAttribute="top" secondItem="YXb-r8-Pfd" secondAttribute="bottom" id="l1Z-1v-d44"/>
+                            <constraint firstItem="nzH-ye-7lL" firstAttribute="bottom" secondItem="jL5-OY-h1o" secondAttribute="bottom" id="rHr-ST-JxQ"/>
+                            <constraint firstItem="nzH-ye-7lL" firstAttribute="leading" secondItem="jL5-OY-h1o" secondAttribute="leading" id="rS7-Gh-mQQ"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Title" id="ra2-fh-6Ac"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ntc-nB-ltj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1564" y="39"/>
+            <point key="canvasLocation" x="1562.5954198473282" y="38.732394366197184"/>
         </scene>
     </scenes>
     <resources>
         <image name="Group 2" width="298" height="93"/>
+        <image name="paperplane.fill" catalog="system" width="128" height="119"/>
         <namedColor name="BrandBlue">
             <color red="0.16500000655651093" green="0.77999997138977051" blue="0.99599999189376831" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="BrandLightBlue">
             <color red="0.92199999094009399" green="0.98000001907348633" blue="0.99599999189376831" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="BrandPurple">
+            <color red="0.67500001192092896" green="0.43500000238418579" blue="0.9179999828338623" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
