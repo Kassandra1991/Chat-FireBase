@@ -47,7 +47,7 @@
                                     <segue destination="ugb-AP-mIL" kind="show" id="lf3-d4-L7U"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="⚡️FlashChat" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rei-0V-Y2O">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="⚡️FlashChat" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rei-0V-Y2O" customClass="CLTypingLabel" customModule="CLTypingLabel">
                                 <rect key="frame" x="43" y="396" width="307.33333333333331" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="qWK-pD-RGQ"/>
@@ -71,6 +71,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="b6a-np-098"/>
+                    <connections>
+                        <outlet property="titleLabel" destination="rei-0V-Y2O" id="day-vi-Ucn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -158,7 +161,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="pHX-L8-05p"/>
                     <connections>
-                        <segue destination="4lv-28-MYz" kind="show" id="cxV-x2-QxW"/>
+                        <segue destination="4lv-28-MYz" kind="show" identifier="LoginToChat" id="cxV-x2-QxW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sfr-3W-VOL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -255,7 +258,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="FM4-nv-coL"/>
                     <connections>
-                        <segue destination="4lv-28-MYz" kind="show" id="Eyr-V6-Ydn"/>
+                        <segue destination="4lv-28-MYz" kind="show" identifier="RegisterToChat" id="Eyr-V6-Ydn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9bR-YK-ncv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -274,7 +277,7 @@
                                 <rect key="frame" x="0.0" y="103" width="393" height="655"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="pNQ-jF-cDX">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="pNQ-jF-cDX">
                                         <rect key="frame" x="0.0" y="50" width="393" height="43.666667938232422"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="pNQ-jF-cDX" id="zZ2-kW-xqV">
