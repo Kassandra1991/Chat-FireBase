@@ -93,7 +93,7 @@
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Group 2" translatesAutoresizingMaskIntoConstraints="NO" id="Ykz-4m-nt7">
                                         <rect key="frame" x="0.0" y="20" width="393" height="137"/>
                                     </imageView>
-                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8yl-aG-BLm">
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="1@cat.com" placeholder="Email" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8yl-aG-BLm">
                                         <rect key="frame" x="48" y="50" width="297" height="45"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -117,10 +117,10 @@
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Group 2" translatesAutoresizingMaskIntoConstraints="NO" id="P98-Al-smE">
                                         <rect key="frame" x="0.0" y="20" width="393" height="137"/>
                                     </imageView>
-                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kvx-Gg-vuC">
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="12345678" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kvx-Gg-vuC">
                                         <rect key="frame" x="48" y="50" width="297" height="45"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x8H-dp-bs6">
                                         <rect key="frame" x="0.0" y="126" width="393" height="51"/>
@@ -129,6 +129,9 @@
                                         <buttonConfiguration key="configuration" style="plain" title="Log in">
                                             <fontDescription key="titleFontDescription" type="system" pointSize="30"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="loginPressed:" destination="ugb-AP-mIL" eventType="touchUpInside" id="s7J-Mu-zeR"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -299,6 +302,9 @@
                                         <color key="tintColor" name="BrandLightBlue"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="paperplane.fill" catalog="system"/>
+                                        <connections>
+                                            <action selector="sendButtonPressed:" destination="4lv-28-MYz" eventType="touchUpInside" id="epy-SY-FTR"/>
+                                        </connections>
                                     </button>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="loo-we-GlG">
                                         <rect key="frame" x="20" y="20" width="293" height="34"/>
@@ -329,7 +335,17 @@
                             <constraint firstItem="nzH-ye-7lL" firstAttribute="leading" secondItem="jL5-OY-h1o" secondAttribute="leading" id="rS7-Gh-mQQ"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Title" id="ra2-fh-6Ac"/>
+                    <navigationItem key="navigationItem" title="Title" id="ra2-fh-6Ac">
+                        <barButtonItem key="rightBarButtonItem" title="Log out" id="0Hl-MF-Jxj">
+                            <connections>
+                                <action selector="logOutPressed:" destination="4lv-28-MYz" id="2Gx-Ms-SUG"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="messageTF" destination="loo-we-GlG" id="s1Z-6Q-KMU"/>
+                        <outlet property="tableView" destination="YXb-r8-Pfd" id="81v-Mk-dah"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ntc-nB-ltj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
