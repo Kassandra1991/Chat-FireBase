@@ -280,7 +280,7 @@
                                 <rect key="frame" x="0.0" y="103" width="393" height="655"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="pNQ-jF-cDX">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="cell" id="pNQ-jF-cDX">
                                         <rect key="frame" x="0.0" y="50" width="393" height="43.666667938232422"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="pNQ-jF-cDX" id="zZ2-kW-xqV">
@@ -324,7 +324,7 @@
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="jL5-OY-h1o"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="BrandPurple"/>
                         <constraints>
                             <constraint firstItem="YXb-r8-Pfd" firstAttribute="top" secondItem="jL5-OY-h1o" secondAttribute="top" id="NYA-Om-e9l"/>
                             <constraint firstItem="YXb-r8-Pfd" firstAttribute="leading" secondItem="jL5-OY-h1o" secondAttribute="leading" id="Q1F-9c-34b"/>
@@ -337,6 +337,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="ra2-fh-6Ac">
                         <barButtonItem key="rightBarButtonItem" title="Log out" id="0Hl-MF-Jxj">
+                            <color key="tintColor" name="BrandLightPurple"/>
                             <connections>
                                 <action selector="logOutPressed:" destination="4lv-28-MYz" id="2Gx-Ms-SUG"/>
                             </connections>
@@ -384,6 +385,9 @@
         </namedColor>
         <namedColor name="BrandLightBlue">
             <color red="0.92199999094009399" green="0.98000001907348633" blue="0.99599999189376831" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="BrandLightPurple">
+            <color red="0.98000001907348633" green="0.9649999737739563" blue="0.99599999189376831" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="BrandPurple">
             <color red="0.67500001192092896" green="0.43500000238418579" blue="0.9179999828338623" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

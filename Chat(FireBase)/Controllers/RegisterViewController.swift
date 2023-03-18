@@ -24,7 +24,7 @@ class RegisterViewController: UIViewController {
             if let currentError = error {
                 print(currentError.localizedDescription)
             } else {
-                self.performSegue(withIdentifier: "RegisterToChat", sender: self)
+                self.performSegue(withIdentifier: Constants.registerSegue, sender: self)
             }
         }
     }
