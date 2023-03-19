@@ -17,10 +17,7 @@ class ChatViewController: UIViewController {
     
     let db = Firestore.firestore()
     
-    var messages: [Message] = [
-    Message(sender: "1@cat.com", body: "Hey!"),
-    Message(sender: "2@cat.com", body: "Hello)"),
-    Message(sender: "1@cat.com", body: "How is it going?!")]
+    var messages: [Message] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,8 +31,10 @@ class ChatViewController: UIViewController {
 
     }
     func loadMessages() {
-        messages = []
-        db.collection(Constants.FStore.collectionName).addSnapshotListener { querySnapShot, error in
+        db.collection(Constants.FStore.collectionName)
+            .order(by: Constants.FStore.dateField)
+            .addSnapshotListener { querySnapShot, error in
+            self.messages = []
             if let currentError = error {
                 print("Wrong getting data from Database: \(currentError.localizedDescription)")
             } else {
@@ -44,6 +43,7 @@ class ChatViewController: UIViewController {
                         let data = doc.data()
                         if let sender = data[Constants.FStore.senderField] as? String, let body = data[Constants.FStore.bodyField] as? String {
                             self.messages.append(Message(sender:sender, body: body))
+                            self.messageTF.text = ""
                             DispatchQueue.main.async {
                                 self.tableView.reloadData()
                             }
@@ -65,7 +65,7 @@ class ChatViewController: UIViewController {
     }
     @IBAction func sendButtonPressed(_ sender: UIButton) {
         if let messageBody = messageTF.text, let messageSender = Auth.auth().currentUser?.email {
-            db.collection(Constants.FStore.collectionName).addDocument(data: [Constants.FStore.senderField: messageSender, Constants.FStore.bodyField: messageBody]) { error in
+            db.collection(Constants.FStore.collectionName).addDocument(data: [Constants.FStore.senderField: messageSender, Constants.FStore.bodyField: messageBody, Constants.FStore.dateField: Date().timeIntervalSince1970]) { error in
                 if let currentError = error {
                     print("Trouble with saving data in firestore: \(currentError.localizedDescription)")
                 } else {
