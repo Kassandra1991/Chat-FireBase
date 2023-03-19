@@ -43,9 +43,11 @@ class ChatViewController: UIViewController {
                         let data = doc.data()
                         if let sender = data[Constants.FStore.senderField] as? String, let body = data[Constants.FStore.bodyField] as? String {
                             self.messages.append(Message(sender:sender, body: body))
-                            self.messageTF.text = ""
                             DispatchQueue.main.async {
                                 self.tableView.reloadData()
+                                let counter = self.messages.count - 1
+                                let index = IndexPath(row: counter, section: 0)
+                                self.tableView.scrollToRow(at: index, at: .bottom, animated: true)
                             }
                         }
                     }
@@ -70,6 +72,9 @@ class ChatViewController: UIViewController {
                     print("Trouble with saving data in firestore: \(currentError.localizedDescription)")
                 } else {
                     print("Succsess saving")
+                    DispatchQueue.main.async {
+                        self.messageTF.text = ""
+                    }
                 }
             }
         }
